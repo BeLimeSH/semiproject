@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel LaLa</title>
+
+    <link rel="stylesheet" href="../Semi_resources/CSS/main.css" type="text/css">
+    <link rel="stylesheet" href="../Semi_resources/CSS/reservation.css" type="text/css">
+
+    <script src="https://kit.fontawesome.com/1ef9913073.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <main>
+        <!-- 헤더 + 네비게이션 -->
+
+        <!-- 페이지 표시 -->
+        <section class="reserveSection" id="pageBarSection">
+            <ul id="pagination">
+                <li class="pageNum">1</li>
+                <li class="pageNum">2</li>
+                <li class="pageNum currentPage">3</li>
+                <li class="pageNum">4</li>
+
+                <div class="reserveTitle" id="pageDef-3">옵션 선택</div>
+            </ul>
+        </section>
+
+        <!-- 옵션 영역 -->
+        <section class="reserveSection">
+            
+            <section class="box-wrap">
+
+                <section id="optionBox" class="selectionContents">
+                    <div class="payment-tit">옵션 선택</div>
+                    
+                    <div class="payment-con" id="option-div">
+                        <div>
+                            <ul class="option-con">
+                                <li class="payment-list">옵션 사항</li>
+                                
+                                <li>
+                                    <div class="payment-list">성인 조식 / 15,000원</div>
+
+                                    <div class="btn-area">
+                                        <button class="minus">
+                                            <i class="fa-solid fa-minus"></i>
+                                        </button>
+                                        <span class="payment-list">0</span>
+                                        <button class="plus">
+                                            <i class="fa-solid fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </li>
+                                
+                                <li>
+                                    <div class="payment-list">어린이 조식 / 10,000원</div>
+
+                                    <div class="btn-area">
+                                        <button class="minus">
+                                            <i class="fa-solid fa-minus"></i>
+                                        </button>
+                                        <span class="payment-list">0</span>
+                                        <button class="plus">
+                                            <i class="fa-solid fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </li>
+                                
+                                <li>
+                                    <div class="payment-list">엑스트라 베드 / 40,000원</div>
+
+                                    <div class="btn-area">
+                                        <button class="minus">
+                                            <i class="fa-solid fa-minus"></i>
+                                        </button>
+                                        <span class="payment-list">0</span>
+                                        <button class="plus">
+                                            <i class="fa-solid fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </li>
+                            </ul>
+                            <span class="extra-note">
+                                * 조식은 객실 기준 인원수에 따라 제공되므로 추가 인원에 대한 조식만 <br>
+                                &nbsp; 선택해주시기 바랍니다. <br>
+                                * 37개월 미만의 유아 동반 시 조식에 대한 요금은 무료입니다.
+                            </span>
+                        </div>
+
+                        <div class="dividing-col"></div>
+
+                        <div>
+                            <div class="payment-list" id="option-req">추가 요청사항</div>
+                            
+                            <form id="req-input-area">
+                                <!-- 글자 수 제한 효과 넣어야 함 -->
+                                <!-- trim()으로 공백을 뺀 문자만 정규표현식으로 검사! 
+                                    -> 특수문자 잘못 들어갔을 경우 alert로 경고, sudmit X -->
+                                <textarea id="req-input" cols="10" rows="6"></textarea>
+                                <button type="reset">초기화</button>
+                            </form>
+                            <span class="extra-note">
+                                * 특수문자(.,!? 제외), 이모티콘 없이 글자만 입력해주세요(150자 제한)
+                            </span>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 유의사항 & 환불 규정 -->
+                <section id="noteBox" class="selectionContents">
+                    <div class="payment-tit">유의사항</div>
+                    <div class="note-con">
+                        <ul>
+                            [호텔 이용안내]
+                            <li>기준 인원을 초과하여 투숙 시 추가 인원에 대해 별도의 요금이 부과됩니다.</li>
+                            <li>추가 인원에 대한 기본 요금은 성인 60,000원, 어린이 36,000원이며, 객실 타입 및 패키지 혜택에 따라 상이합니다. <br>
+                                (성인 기준 : 만 13세 이상, 어린이 기준 : 37개월 이상 ~ 만 12세 이하)</li>
+                            <li>37개월 미만의 유아 동반 시 추가 인원 요금 및 조식은 무료이며, 유아(37개월 미만) 동반 여부는 체크인 시 프런트 데스크 직원에게 알려 주셔야 무료로 이용 가능합니다.</li>
+                            <li>체크인은 오후 2시 이후, 체크아웃은 오전 11시까지입니다.</li>
+                            <li>오후 2시 이전 Early Check-in 또는 오전 11시 이후 Late Check-out 하실 경우 추가 요금이 부과될 수 있습니다.</li>
+                            <li>체크인 시 등록카드 작성 및 투숙객 본인 확인을 위해 본인 사진이 포함된 신분증을 반드시 제시해 주시기 바랍니다</li>
+                            <li>자세한 객실안내는 객실예약과(010-0000-0000)로 문의 바랍니다.</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section id="ruleBox" class="selectionContents">
+                    <div class="payment-tit">취소 및 환불 규정</div>
+                    <div class="note-con">
+                        <ul>
+                            [취소/변경 및 노쇼(No-show) 안내]
+                            <li>숙박 예정일 3일 전 까지는 위약금 없이 취소 및 변경이 가능합니다.</li>
+                            <li>예약 취소 시 숙박 예정일 2일전에는 예약 금액의 80%, 숙박 예정일 전날에는 예약 금액의 50%까지 환불이 가능합니다.</li>
+                            <li>숙박 예정일 당일 취소/변경 및 노쇼(No-show) 발생 시 예약 금액 환불이 불가능합니다.</li>
+                        </ul>
+                    </div>
+                </section>
+
+            </section>
+
+        </section>
+            
+
+        <!-- 결제 금액 영역 -->
+        <section class="payment-area">
+            <section>
+                <div class="payment-div1">
+                    <span>금액</span>
+                    <div class="room-price">100,000</div>               
+                    <div>원</div>               
+                </div>
+    
+                <div class="payment-div2">
+                    <!-- a 태그(임시) -> 삭제 예정 -->
+                    <button>
+                        <a href="reservation-room.html" style="color: white;">이전 페이지로</a>
+                    </button>
+
+                    <button>
+                        <a href="reservation-payment.html" style="color: white;">예약하기</a>
+                    </button>
+                </div>
+            </section>
+        </section>
+
+        <!-- 푸터 -->
+    </main>
+    
+</body>
+</html>

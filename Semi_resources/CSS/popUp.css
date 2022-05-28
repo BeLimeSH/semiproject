@@ -1,0 +1,66 @@
+@font-face {
+    font-family: 'IBMPlexSansKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{font-family: 'IBMPlexSansKR-Regular'; box-sizing: border-box;}
+
+body{
+    margin: 0;
+    min-width: 1160px;
+    display: flex;
+    justify-content: center;
+}
+
+main{margin: 0 10px; width: 900px;}
+
+.close-btn-area{height: 40px; display: flex; justify-content: flex-end; align-items: flex-start; background-color: rgb(240, 240, 240);}
+.close-btn-area>i{font-size: 36px; font-weight: bold; color: #ccc;}
+
+/* 이미지 영역 */
+.room-image-area{height: 550px; background-color: rgb(240, 240, 240);}
+.room-image-area>div{display: flex; justify-content: center; align-items: center;}
+.room-image-area img{height: 550px;}
+
+/* 객실 정보 영역 */
+.room-info-area{height: 600px; display: flex;}
+.room-info-area>section{padding: 20px;}
+.room-info-area>section:nth-child(1){flex-basis: 60%; border: 5px solid rgb(240, 240, 240); border-right: 0;}
+.room-info-area>section:nth-child(2){flex-basis: 40%;}
+
+#roomInfo{font-size: 18px; font-weight: bold; color: rgb(100,100,100); margin-bottom: 20px;}
+.wifiMessage{color: rgb(100,100,100);}
+
+.room-detail{font-size: 18px;}
+.room-subtit{font-weight: bold; margin: 30px 0 10px;}
+.room-detail>ul{margin: 0; padding: 0; list-style: none;}
+.room-detail>ul>li>span:nth-child(1){
+    font-weight: bold;
+    display: inline-block;
+    width:100px;
+    color: rgb(100,100,100);
+    margin-left: 10px;
+}
+
+/* 어메니티 영역 */
+.amenity-area{font-size: 18px;}
+.amenity-area>table{margin-left: 10px;}
+.first-row{font-weight: bold; color: rgb(100,100,100);}
+.first-row>td:nth-child(1){width: 210px}
+.first-row>td:nth-child(2){width: 160px}
+.first-row>td:nth-child(3){width: 260px}
+
+/* 호텔 이용 안내 */
+.hotel-info-area{font-size: 18px; border: 5px solid rgb(240, 240, 240);}
+.hotel-info-area>div{font-weight: bold;}
+.hotel-info-area>ul{margin: 30px 0; padding: 0; list-style: none;}
+.hotel-info-area>ul>li{margin-left: 10px;}
+.hotel-info-area>ul>li:nth-child(1){
+    font-weight: bold;
+    margin-left: 0;
+    margin-bottom: 10px;
+    color: rgb(100,100,100);
+}
+.hotel-tel>span{color: rgb(100,100,100); margin-right: 10px;}

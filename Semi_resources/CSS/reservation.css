@@ -1,0 +1,640 @@
+/* body랑 main 태그에 설정 있음 */
+
+/* 폰트 */
+@font-face {
+    font-family: 'IBMPlexSansKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{font-family: 'IBMPlexSansKR-Regular';}
+
+/* 예약 section */
+.reserveSection{
+    margin: 0 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.selectionContents{
+    width: 1000px;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+}
+
+
+/* 페이지 표시 */
+#pageBarSection{height: 300px; align-items: flex-end;}
+
+#pagination{
+    width: 380px;
+    list-style: none;
+    display: inline-block;
+    text-align: center;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+#pagination li{display: inline;}
+
+.pageNum{
+    border-radius: 50%;
+    border: 5px solid lightgray;
+    background-color: white;
+    color: lightgray;
+
+    font-size: 20px;
+    font-weight: bold;
+    margin: 15px;
+    padding: 4px 12px;
+    text-decoration: none;
+}
+
+.currentPage{
+    border: 5px solid orangered;
+    background-color: white;
+    color: rgb(100, 100, 100);
+}
+
+#pageDef-1{margin-top: 30px; text-align: left;}
+#pageDef-2{margin-top: 30px; margin-left: 110px; text-align: left;}
+#pageDef-3{margin-top: 30px; margin-left: 195px; text-align: left;}
+#pageDef-4{margin-top: 30px; margin-left: 291px; text-align: left;}
+
+
+/* 날짜 선택 바 */
+#dateSelection{
+    height: 150px; margin: 25px 0;
+    width: 1000px;
+    border-bottom: 3px solid darkgray;
+    border-top: 3px solid darkgray;
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#dateSelection>div{
+    margin: 0 20px;
+}
+
+.reserveTitle{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: rgb(100, 100, 100);
+}
+
+.reserveContent{
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+.reserveCount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+#roomSearchBtn{
+    width: 110px;
+    height: 60px;
+    margin: 30px;
+
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+
+    border: 5px solid orangered;
+    border-radius: 10px;
+}
+
+#roomSearchBtn:hover{
+    border: 5px solid gray;
+    color: gray;
+    cursor: pointer;
+}
+
+#dividingBar{margin: 15px;}
+
+.dividing-col{border: 1px solid lightgray; height: 90%;}
+
+/* reservation-date */
+/* 달력 */
+#calendarArticle{height: 600px; margin: 25px 0;}
+
+/* 인원 선택 */
+#headcountArticle{height: 360px; margin-top:25px; margin-bottom: 100px;}
+
+.roomCount{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 10px;
+    padding: 10px;
+    height: 100px;
+}
+
+.roomCount-tit{
+    width: 120px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(80, 80, 80);
+
+    margin: 20px;
+}
+
+.roomCount-con{
+    display: flex;
+    align-items: center;
+}
+
+.roomCount-con>div{margin: 0 50px;}
+
+.roomCount-el{
+    font-size: 20px;
+    font-weight: bold;
+
+    width: 35px;
+    height: 35px;
+    margin: 5px;
+    padding: 0;
+}
+
+.roomCount button{
+    border-radius: 5px;
+    border: 4px solid orangered;
+    background-color: orangered;
+    color: white;
+}
+
+.roomCount button:hover{
+    cursor: pointer;
+    border: 4px solid orangered;
+    background-color: white;
+    color: rgb(80, 80, 80);
+}
+
+.addRoomArea{width:150px; text-align: center;}
+
+.addRoomArea>a{font-size: 18px; color: orange; margin-right: 30px;}
+.addRoomArea i{font-size: 36px; color: #ddd;}
+
+.dividing-row{width:960px; border: 1px solid lightgray; margin: 0 20px;}
+
+
+/* --------------------------------------------------------------------------------- */
+/* reservation-room */
+#selectRoom{margin-top: 25px; margin-bottom: 100px;}
+
+.selectbox-area{
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+}
+
+.roomBox{
+    width:100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 35px;
+}
+
+#roomList{margin:0; padding: 0;}
+
+#roomList>li{
+    padding: 0;
+    list-style: none;
+}
+
+.roomBox img{width:300px;}
+
+.roomBox>div:nth-of-type(1){
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.roomBox>div:nth-child(2){
+    width: 500px;
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: space-between;
+}
+
+.roomBox>div:nth-child(2)>div{width:100%}
+
+.roomBox>div:nth-child(3){
+    width: 300px;
+    height: 90%;
+    text-align: right;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: flex-end;
+}
+
+.roomBox>div:nth-child(3)>div{width:100%}
+
+.room-tit{font-size: 24px; font-weight: bold; margin: 5px;}
+.room-content{font-size: 17px; margin: 5px;}
+.room-detail{font-size: 17px; margin: 5px;}
+
+.reserveBtn{
+    font-size: 24px;
+    font-weight: bold;
+    margin: 5px;
+    width: 120px;
+    height: 50px;
+    border-radius: 5px;
+    border: 4px solid orangered;
+    background-color: orangered;
+    color: white;
+}
+
+.reserveBtn:hover{
+    cursor: pointer;
+    border: 4px solid orangered;
+    background-color: white;
+    color: rgb(80, 80, 80);
+}
+
+/* ---------------------------------------------------------------------------------------- */
+/* reservation-option */
+
+/* 옵션 영역 */
+.payment-tit{
+    width:100%;
+    height: 50px;
+    background-color: #ddd;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.payment-con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#option-div{height: 300px;}
+
+.payment-con>div:nth-child(1){width:50%; height: 100%; padding: 20px;}
+.payment-con>div:nth-child(3){width:50%; height: 100%; padding: 20px;}
+
+#optionBox{height: 350px; margin: 40px 0;}
+#noteBox{height:320px;}
+#ruleBox{height:175px; margin: 40px 0 50px;}
+
+/* 내용 글꼴 지정 */
+.payment-list{font-size: 20px; font-weight: bold; color: rgb(80, 80, 80);}
+
+.option-con{padding: 0; margin: 0 0 25px;}
+
+.option-con>li{
+    display: flex;
+    justify-content: space-between;
+}
+
+.option-con>li:nth-of-type(1){
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+}
+.option-con>li{margin-bottom: 10px;}
+
+.extra-note{color: rgb(100, 100, 100); font-size: 16px;}
+
+.btn-area>button{
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 10px;
+    padding: 0;
+    border-radius: 5px;
+    
+    border: 4px solid orangered;
+    background-color: orangered;
+    color: white;
+}
+
+.btn-area>button:hover{
+    cursor: pointer;
+    border: 4px solid orangered;
+    background-color: white;
+    color: rgb(80, 80, 80);
+}
+
+.option-con div{color: black;}
+.option-con span{color: black;}
+/* ----------------------------- */
+#option-req{margin-bottom: 10px; padding-bottom: 5px;
+}
+
+#req-input-area{
+    text-align: right;
+}
+
+#req-input-area>button{
+    margin-left: 10px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 3px solid orangered;
+    background-color: white;
+}
+
+#req-input-area>button:hover{
+    border: 3px solid rgb(100, 100, 100);
+    color: rgb(100, 100, 100);
+}
+
+#req-input{
+    width: 100%;
+    height: 150px;
+    border-radius: 5px;
+    border: 1px solid darkgray;
+    padding: 10px;
+    font-size: 16px;
+    resize: none;
+}
+
+.note-con>ul{margin: 0; padding: 15px; font-size: 16px; font-weight: bold;}
+.note-con>ul>li{
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: normal;
+    color: rgb(100, 100, 100);
+    list-style: circle;
+}
+
+.note-con{height: 80%;}
+
+/* 결제 영역 */
+.payment-area{
+    width: 100%;
+    height: 200px;
+    display:flex;
+    justify-content: center;
+    border-top: 2px solid rgb(100, 100, 100);
+}
+
+.payment-area>section>div{
+    width: 1060px;
+    height: 100px;
+    display: flex;
+}
+.payment-div1{
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.payment-div2{
+    justify-content: space-between;
+    align-items: center;
+}
+
+.payment-div1>span{
+    font-size: 28px;
+    font-weight: bold;
+    margin: 5px 10px;
+}
+
+.payment-div1>div{
+    font-size: 28px;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.room-price{
+    width:120px;
+    text-align: right;
+}
+
+.payment-div2>button{
+    font-size: 22px;
+    font-weight: bold;
+    margin: 5px;
+    width: 160px;
+    height: 60px;
+    border-radius: 5px;
+    border: 4px solid orangered;
+    background-color: orangered;
+    color: white;
+}
+
+.payment-div2>button:hover{
+    cursor: pointer;
+    border: 4px solid orangered;
+    background-color: white;
+    color: rgb(80, 80, 80);
+}
+
+/* ---------------------------------------------------------------------------------------- */
+/* reservation-payment */
+
+#order-box{margin: 25px 0; height: 430px;}
+#point-box{margin: 50px 0;  height: 200px;}
+#pay-option-box{margin: 50px 0; height: 200px;}
+
+#info-div{height: 370px;}
+#point-div{height: 140px;}
+
+#info-div ul{margin: 0; padding: 0;}
+#info-div li{padding: 0; list-style: none;}
+
+/* 결제 정보 */
+.unbundling{
+    width: 100%;
+    height: 55px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.unbundling>span{font-size: 22px; font-weight: bold; color: black;}
+
+.textBox{
+    margin-top: 10px;
+    padding: 5px;
+    width: 100%;
+    height: 120px;
+    border: 1px solid #ccc;
+}
+
+.option-result>li{margin-bottom: 10px;}
+.option-result>li:nth-child(1){border-bottom: 2px solid #ddd;}
+
+.option-result>li>span{color: black; display: inline-block;}
+
+.option-result>li>span:nth-child(1){width:290px;}
+.option-result>li>span:nth-child(3){width:25px; text-align: center;}
+.option-result>li>span:nth-child(5){width:100px; text-align: right;}
+
+.req-result{margin-top: 20px;}
+
+/* 포인트 영역 */
+.point-con{padding: 15px;}
+.point-con>ul{margin: 0; padding: 0;}
+
+.point-row{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: bold;
+}
+.point-row>span{margin-top: 5px;}
+.point-row>span>input{
+    text-align: right;
+    margin-bottom: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    padding-right: 5px;
+}
+
+input::-webkit-inner-spin-button {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+.point-row>span>label{display: flex; align-items: center; justify-content: flex-end;}
+
+#saving-point-box{
+    margin: 50px 0;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#saving-point-box>span{font-size: 24px; font-weight: bold; margin: 5px;}
+
+/* 약관 동의 */
+#agreement-box{
+    margin-bottom: 50px;
+    height: 80px;
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#agreement-box>label{margin: 5px; font-size: 22px;}
+
+/* ---------------------------------------------------------------------------------------- */
+/* reservation-complete */
+#completePage{margin: 50px 0 100px; padding: 50px;}
+
+.complete-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    border: 1px solid #ccc;
+}
+.complete-message{text-align: center; font-size: 36px; font-weight: bold;}
+
+.result-box{margin-top: 50px;}
+.result-tit{
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* 결과 내용 */
+.result-box ul{margin: 0; padding: 0; list-style: none;}
+
+.result-box li{
+    margin: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+
+.result-con{display: flex;}
+.result-con>div{width: 50%;}
+
+.result-val{font-weight: normal; color: rgb(80, 80, 80);}
+
+.result-div2>ul>li:nth-child(1){border-bottom: 2px solid #ccc;}
+.result-div2>ul>li:nth-child(3){margin-bottom: 5px;}
+#req-result{margin: 0 10px 10px; padding: 5px; border: 1px solid #ccc;}
+
+.selected-option>ul>li{font-size: 18px; padding: 0 20px; color: rgb(100, 100, 100); margin: 0;}
+
+.result-div3>ul>li:nth-child(2){margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #ccc;}
+
+.complete-pay-box{
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-top: 20px;
+}
+
+/* 버튼 */
+.result-btn-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.result-btn-area>button{
+    width: 130px;
+    height: 70px;
+    margin: 0 30px;
+    padding: 0;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    border: 3px solid orangered;
+    border-radius: 5px;
+    background-color: orangered;
+    color: white;
+    cursor: pointer;
+}
+
+.result-btn-area>button:hover{
+    border: 3px solid orangered;
+    background-color: white;
+    color: rgb(100, 100, 100);
+}
+
+/* 요소 숨기기 class */
+.hideResource{visibility: hidden;}
+.removeResource{display: none;}
