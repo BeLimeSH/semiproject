@@ -21,7 +21,7 @@
 
 .selectionContents{
     width: 1000px;
-    border: 1px solid darkgray;
+    border: 1px solid #ddd;
     border-radius: 5px;
 }
 
@@ -42,9 +42,9 @@
 
 .pageNum{
     border-radius: 50%;
-    border: 5px solid lightgray;
+    border: 5px solid #ccc;
     background-color: white;
-    color: lightgray;
+    color: #ccc;
 
     font-size: 20px;
     font-weight: bold;
@@ -54,7 +54,7 @@
 }
 
 .currentPage{
-    border: 5px solid orangered;
+    border: 5px solid #ff7E5F;
     background-color: white;
     color: rgb(100, 100, 100);
 }
@@ -69,9 +69,8 @@
 #dateSelection{
     height: 150px; margin: 25px 0;
     width: 1000px;
-    border-bottom: 3px solid darkgray;
-    border-top: 3px solid darkgray;
-    
+    border-bottom: 3px solid #ccc;
+    border-top: 3px solid #ccc;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -112,19 +111,19 @@
     color: black;
     background-color: white;
 
-    border: 5px solid orangered;
+    border: 5px solid #ff7E5F;
     border-radius: 10px;
 }
 
 #roomSearchBtn:hover{
-    border: 5px solid gray;
-    color: gray;
+    border: 5px solid #ccc;
+    color: #ccc;
     cursor: pointer;
 }
 
 #dividingBar{margin: 15px;}
 
-.dividing-col{border: 1px solid lightgray; height: 90%;}
+.dividing-col{border: 1px solid #ddd; height: 90%;}
 
 /* reservation-date */
 /* 달력 */
@@ -172,21 +171,21 @@
 
 .roomCount button{
     border-radius: 5px;
-    border: 4px solid orangered;
-    background-color: orangered;
+    border: 4px solid #ff7E5F;
+    background-color: #ff7E5F;
     color: white;
 }
 
 .roomCount button:hover{
     cursor: pointer;
-    border: 4px solid orangered;
+    border: 4px solid #ff7E5F;
     background-color: white;
     color: rgb(80, 80, 80);
 }
 
 .addRoomArea{width:150px; text-align: center;}
 
-.addRoomArea>a{font-size: 18px; color: orange; margin-right: 30px;}
+.addRoomArea>a{font-size: 18px; color: #ffa661; margin-right: 30px;}
 .addRoomArea i{font-size: 36px; color: #ddd;}
 
 .dividing-row{width:960px; border: 1px solid lightgray; margin: 0 20px;}
@@ -263,14 +262,14 @@
     width: 120px;
     height: 50px;
     border-radius: 5px;
-    border: 4px solid orangered;
-    background-color: orangered;
+    border: 4px solid #ff7E5F;
+    background-color: #ff7E5F;
     color: white;
 }
 
 .reserveBtn:hover{
     cursor: pointer;
-    border: 4px solid orangered;
+    border: 4px solid #ff7E5F;
     background-color: white;
     color: rgb(80, 80, 80);
 }
@@ -282,7 +281,7 @@
 .payment-tit{
     width:100%;
     height: 50px;
-    background-color: #ddd;
+    background-color: #ffeee2;
     font-size: 24px;
     font-weight: bold;
     color: black;
@@ -336,14 +335,14 @@
     padding: 0;
     border-radius: 5px;
     
-    border: 4px solid orangered;
-    background-color: orangered;
+    border: 4px solid #ff7E5F;
+    background-color: #ff7E5F;
     color: white;
 }
 
 .btn-area>button:hover{
     cursor: pointer;
-    border: 4px solid orangered;
+    border: 4px solid #ff7E5F;
     background-color: white;
     color: rgb(80, 80, 80);
 }
@@ -364,7 +363,7 @@
     font-size: 16px;
     font-weight: bold;
     border-radius: 5px;
-    border: 3px solid orangered;
+    border: 3px solid #ff7E5F;
     background-color: white;
 }
 
@@ -400,7 +399,7 @@
     height: 200px;
     display:flex;
     justify-content: center;
-    border-top: 2px solid rgb(100, 100, 100);
+    border-top: 2px solid #ccc;
 }
 
 .payment-area>section>div{
@@ -442,14 +441,14 @@
     width: 160px;
     height: 60px;
     border-radius: 5px;
-    border: 4px solid orangered;
-    background-color: orangered;
+    border: 4px solid #ff7E5F;
+    background-color: #ff7E5F;
     color: white;
 }
 
 .payment-div2>button:hover{
     cursor: pointer;
-    border: 4px solid orangered;
+    border: 4px solid #ff7E5F;
     background-color: white;
     color: rgb(80, 80, 80);
 }
@@ -622,15 +621,15 @@ input::-webkit-inner-spin-button {
     text-align: center;
     font-size: 20px;
     font-weight: bold;
-    border: 3px solid orangered;
+    border: 5px solid #feb47b;
     border-radius: 5px;
-    background-color: orangered;
+    background-color: #feb47b;
     color: white;
     cursor: pointer;
 }
 
 .result-btn-area>button:hover{
-    border: 3px solid orangered;
+    border: 5px solid #feb47b;
     background-color: white;
     color: rgb(100, 100, 100);
 }
