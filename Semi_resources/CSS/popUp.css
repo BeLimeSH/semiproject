@@ -7,27 +7,19 @@
 
 *{font-family: 'IBMPlexSansKR-Regular'; box-sizing: border-box;}
 
-body{
-    margin: 0;
-    min-width: 1160px;
-    display: flex;
-    justify-content: center;
-}
+body{margin: 0;}
 
-main{margin: 0 10px; width: 900px;}
-
-.close-btn-area{height: 40px; display: flex; justify-content: flex-end; align-items: flex-start; background-color: rgb(240, 240, 240);}
-.close-btn-area>i{font-size: 36px; font-weight: bold; color: #ccc;}
+main{width: 900px;}
 
 /* 이미지 영역 */
-.room-image-area{height: 550px; background-color: rgb(240, 240, 240);}
+.room-image-area{height: 560px; border: 5px solid #ffeee2; border-bottom: 0; padding: 30px 0;}
 .room-image-area>div{display: flex; justify-content: center; align-items: center;}
-.room-image-area img{height: 550px;}
+.room-image-area img{height: 500px;}
 
 /* 객실 정보 영역 */
 .room-info-area{height: 600px; display: flex;}
 .room-info-area>section{padding: 20px;}
-.room-info-area>section:nth-child(1){flex-basis: 60%; border: 5px solid rgb(240, 240, 240); border-right: 0;}
+.room-info-area>section:nth-child(1){flex-basis: 60%; border: 5px solid #ffeee2; border-right: 0;}
 .room-info-area>section:nth-child(2){flex-basis: 40%;}
 
 #roomInfo{font-size: 18px; font-weight: bold; color: rgb(100,100,100); margin-bottom: 20px;}
@@ -53,7 +45,7 @@ main{margin: 0 10px; width: 900px;}
 .first-row>td:nth-child(3){width: 260px}
 
 /* 호텔 이용 안내 */
-.hotel-info-area{font-size: 18px; border: 5px solid rgb(240, 240, 240);}
+.hotel-info-area{font-size: 18px; border: 5px solid #ffeee2;}
 .hotel-info-area>div{font-weight: bold;}
 .hotel-info-area>ul{margin: 30px 0; padding: 0; list-style: none;}
 .hotel-info-area>ul>li{margin-left: 10px;}

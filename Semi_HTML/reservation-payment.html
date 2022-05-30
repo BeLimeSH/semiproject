@@ -168,28 +168,58 @@
                     </div>
                 </section>
                 
-                
                 <!-- 적립예정 포인트 -->
                 <section id="saving-point-box" class="selectionContents">
                     <span>적립 예정 포인트 : </span>
                     <span id="saving-point">1,000</span>
                 </section>
-                
+
                 <!-- 결제 방법 선택 -->
                 <!-- API 필수 -->
                 <section id="pay-option-box" class="selectionContents">
                     <div class="payment-tit">결제 방법</div>
                     
-                    <div class="payment-con">
+                    <div class="payment-con pay-option-con">
                         
-                        <input type="radio" name="pay-option">
-                        <input type="radio" name="pay-option">
-                        <input type="radio" name="pay-option">
-                        <input type="radio" name="pay-option">
+                        <!-- 카드 -->
+                        <label>
+                            <div class="option-btn">
+                                <i class="fa-solid fa-credit-card"></i>
+                                <div>카드 결제</div>
+                            </div>
+                            <input type="radio" name="pay-option" value="card" class="removeResource">
+                        </label>
+                        
+                        <!-- 실시간 계좌이체 -->
+                        <label>
+                            <div class="option-btn">
+                                <i class="fa-solid fa-money-bill-transfer"></i>
+                                <div>실시간 계좌이체</div>
+                            </div>
+                            <input type="radio" name="pay-option" value="trans" class="removeResource">
+                        </label>
+                        
+                        <!-- 가상계좌 -->
+                        <label>
+                            <div class="option-btn">
+                                <i class="fa-solid fa-money-check-dollar"></i>
+                                <div>가상계좌</div>
+                            </div>
+                            <input type="radio" name="pay-option" value="vbank" class="removeResource">
+                        </label>
+                        
+                        <!-- 핸드폰 -->
+                        <label>
+                            <div class="option-btn">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                                <div>핸드폰 결제</div>
+                            </div>
+                            <input type="radio" name="pay-option" value="phone" class="removeResource">
+                        </label>
                         
                     </div>
                 </section>
-
+                
                 <!-- ------------------------------------------jsp로 추가하자--------------------------------------------- -->
                 <!-- 유의사항 & 환불 규정 -->
                 <section id="noteBox" class="selectionContents">
@@ -240,16 +270,22 @@
                         <a href="reservation-option.html" style="color: white;">이전 페이지로</a>
                     </button>
 
-                    <!-- a 태그(임시) -> 삭제 예정 -->
-                    <button>
-                        <a href="reservation-complete.html" style="color: white;">예약하기</a>
-                    </button>
+                    <button type="button" id="iamportPayment">결제하기</button>
                 </div>
             </section>
         </section>
 
         <!-- 푸터 -->
     </main>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- iamport.payment.js -->
+    <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+
+
+    <script src="../Semi_resources/js/payment.js"></script>
   
 </body>
 </html>

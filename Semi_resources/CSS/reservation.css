@@ -537,6 +537,28 @@ input::-webkit-inner-spin-button {
 
 #saving-point-box>span{font-size: 24px; font-weight: bold; margin: 5px;}
 
+/* 결제 방법 */
+.option-btn{
+    width: 115px;
+    height: 115px;
+    background-color: #ff7E5F;
+    border: 5px solid #ff7E5F;
+    border-radius: 5px;
+    display: block;
+    margin: 0 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.option-btn:hover{
+    border: 5px solid #ff4c1f;
+}
+
+.option-btn>i{font-size: 50px; margin: 15px 0 5px;}
+
+.pay-option-con{display: flex; align-items: center; height: 150px;}
+.pay-option-con>label{text-align: center;}
+
 /* 약관 동의 */
 #agreement-box{
     margin-bottom: 50px;
