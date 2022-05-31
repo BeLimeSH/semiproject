@@ -76,9 +76,13 @@
     align-items: center;
 }
 
-#dateSelection>div{
+#dateSelection>div, label{
     margin: 0 20px;
 }
+
+#reserve-datepicker{border: 0; outline: 0; text-align: center; cursor: pointer; text-decoration: underline;}
+
+#dateRange{width: 60px; text-align: right; border: 0; outline: 0;}
 
 .reserveTitle{
     font-size: 20px;
@@ -91,7 +95,6 @@
     font-size: 24px;
     font-weight: bold;
     color: black;
-    text-decoration: none;
 }
 
 .reserveCount{
@@ -99,6 +102,15 @@
     justify-content: center;
     align-items: center;
     font-weight: bold;
+}
+
+.head-input{
+    width: 30px;
+    text-align: center;
+    border: 0;
+    outline: 0;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 #roomSearchBtn{
@@ -117,7 +129,7 @@
 
 #roomSearchBtn:hover{
     border: 5px solid #ccc;
-    color: #ccc;
+    color: rgb(100, 100, 100);
     cursor: pointer;
 }
 
@@ -126,20 +138,37 @@
 .dividing-col{border: 1px solid #ddd; height: 90%;}
 
 /* reservation-date */
-/* 달력 */
-#calendarArticle{height: 600px; margin: 25px 0;}
+#dateMessage{
+    height: 400px;
+    margin: 25px 0 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: rgb(100, 100, 100);
+}
 
 /* 인원 선택 */
-#headcountArticle{height: 360px; margin-top:25px; margin-bottom: 100px;}
+#headcountBox{height: 120px;}
 
 .roomCount{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 
     margin: 10px;
     padding: 10px;
     height: 100px;
+}
+
+.roomCount>div:first-child{
+    border-right: 1px solid #ddd;
+    width: 20%;
+    height: 90%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .roomCount-tit{
@@ -148,13 +177,13 @@
     font-weight: bold;
     text-align: center;
     color: rgb(80, 80, 80);
-
-    margin: 20px;
 }
 
 .roomCount-con{
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 65%;
 }
 
 .roomCount-con>div{margin: 0 50px;}
@@ -169,6 +198,7 @@
     padding: 0;
 }
 
+/* 플러스 마이너스 버튼 */
 .roomCount button{
     border-radius: 5px;
     border: 4px solid #ff7E5F;
@@ -183,13 +213,31 @@
     color: rgb(80, 80, 80);
 }
 
-.addRoomArea{width:150px; text-align: center;}
+/* 저장 버튼 */
+.roomCount>div:last-child{
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
 
-.addRoomArea>a{font-size: 18px; color: #ffa661; margin-right: 30px;}
-.addRoomArea i{font-size: 36px; color: #ddd;}
+#countBtn{
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: white;
+    color: black;
+    border: 5px solid rgb(254, 205, 113);
+}
+
+#countBtn:hover{
+    border: 5px solid #ccc;
+    color: rgb(100, 100, 100);
+    cursor: pointer;
+}
 
 .dividing-row{width:960px; border: 1px solid lightgray; margin: 0 20px;}
-
 
 /* --------------------------------------------------------------------------------- */
 /* reservation-room */
@@ -324,7 +372,7 @@
 }
 .option-con>li{margin-bottom: 10px;}
 
-.extra-note{color: rgb(100, 100, 100); font-size: 16px;}
+.extra-note{color: rgb(100, 100, 100); font-size: 16px; margin: 0;}
 
 .btn-area>button{
     width: 30px;
@@ -396,7 +444,7 @@
 /* 결제 영역 */
 .payment-area{
     width: 100%;
-    height: 200px;
+    height: 230px;
     display:flex;
     justify-content: center;
     border-top: 2px solid #ccc;
@@ -456,11 +504,11 @@
 /* ---------------------------------------------------------------------------------------- */
 /* reservation-payment */
 
-#order-box{margin: 25px 0; height: 430px;}
+#order-box{margin: 25px 0; height: 360px;}
 #point-box{margin: 50px 0;  height: 200px;}
 #pay-option-box{margin: 50px 0; height: 200px;}
 
-#info-div{height: 370px;}
+#info-div{height: 310px;}
 #point-div{height: 140px;}
 
 #info-div ul{margin: 0; padding: 0;}
@@ -485,9 +533,12 @@
     margin-top: 10px;
     padding: 5px;
     width: 100%;
-    height: 120px;
+    height: 150px;
     border: 1px solid #ccc;
+    border-radius: 5px;
 }
+
+.req-result-message{color: rgb(100, 100, 100); margin-top: 20px;}
 
 .option-result>li{margin-bottom: 10px;}
 .option-result>li:nth-child(1){border-bottom: 2px solid #ddd;}
@@ -497,8 +548,6 @@
 .option-result>li>span:nth-child(1){width:290px;}
 .option-result>li>span:nth-child(3){width:25px; text-align: center;}
 .option-result>li>span:nth-child(5){width:100px; text-align: right;}
-
-.req-result{margin-top: 20px;}
 
 /* 포인트 영역 */
 .point-con{padding: 15px;}
@@ -608,13 +657,20 @@ input::-webkit-inner-spin-button {
 
 .result-val{font-weight: normal; color: rgb(80, 80, 80);}
 
+.result-div1>ul>li:last-child{
+    border-top: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    padding: 15px 0;
+    margin-top: 32px;
+}
+
 .result-div2>ul>li:nth-child(1){border-bottom: 2px solid #ccc;}
 .result-div2>ul>li:nth-child(3){margin-bottom: 5px;}
 #req-result{margin: 0 10px 10px; padding: 5px; border: 1px solid #ccc;}
 
 .selected-option>ul>li{font-size: 18px; padding: 0 20px; color: rgb(100, 100, 100); margin: 0;}
 
-.result-div3>ul>li:nth-child(2){margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #ccc;}
+.result-div3 li:nth-child(2){margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #ccc;}
 
 .complete-pay-box{
     font-size: 20px;

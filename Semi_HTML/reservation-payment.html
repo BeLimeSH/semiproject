@@ -41,27 +41,39 @@
                         <div>
                             <ul>
                                 <li>
-                                    <div class="payment-list">객실1</div>
+                                    <div class="payment-list">객실</div>
                                     <div class="unbundling">
-                                        <span id="room1" class="payment-list">room1/1박</span>
-                                        <span id="room1-price" class="payment-list">100,000원</span>
+                                        <span class="payment-list">Standard/1박</span>
+                                        <span class="payment-list">100,000원</span>
                                     </div>
                                 </li>
+                            </ul>
 
+                            <ul class="option-result">
+                                <li class="payment-list">선택한 옵션(옵션 / 수량 / 가격)</li>
+                                
                                 <li>
-                                    <div class="payment-list">객실2</div>
-                                    <div class="unbundling hideResource">
-                                        <span id="room2" class="payment-list">room2/1박</span>
-                                        <span id="room2-price" class="payment-list">100,000원</span>
-                                    </div>
+                                    <span class="payment-list">성인 조식(15,000원)</span>
+                                    <span class="payment-list">|</span>
+                                    <span class="payment-list">0</span>
+                                    <span class="payment-list">|</span>
+                                    <span class="payment-list">0원</span>
                                 </li>
-
+                                
                                 <li>
-                                    <div class="payment-list" class="payment-list">객실3</div>
-                                    <div class="unbundling hideResource">
-                                        <span id="room3" class="payment-list">room3/1박</span>
-                                        <span id="room3-price" class="payment-list">100,000원</span>
-                                    </div>
+                                    <span class="payment-list">어린이 조식(10,000원)</span>
+                                    <span class="payment-list">|</span>
+                                    <span class="payment-list">0</span>
+                                    <span class="payment-list">|</span>
+                                    <span class="payment-list">0원</span>
+                                </li>
+                                
+                                <li>
+                                    <span class="payment-list">엑스트라 베드(40,000원)</span>
+                                    <span class="payment-list">|</span>
+                                    <span class="payment-list">0</span>
+                                    <span class="payment-list">|</span>
+                                    <span class="payment-list">100,000원</span>
                                 </li>
                             </ul>
                         </div>
@@ -69,42 +81,13 @@
                         <div class="dividing-col"></div>
 
                         <div>
-                            <div>
-                                <ul class="option-result">
-                                    <li class="payment-list">선택한 옵션(옵션 / 수량 / 가격)</li>
-                                    
-                                    <li>
-                                        <span class="payment-list">성인 조식(15,000원)</span>
-                                        <span class="payment-list">|</span>
-                                        <span class="payment-list">0</span>
-                                        <span class="payment-list">|</span>
-                                        <span class="payment-list">0원</span>
-                                    </li>
-                                    
-                                    <li>
-                                        <span class="payment-list">어린이 조식(10,000원)</span>
-                                        <span class="payment-list">|</span>
-                                        <span class="payment-list">0</span>
-                                        <span class="payment-list">|</span>
-                                        <span class="payment-list">0원</span>
-                                    </li>
-                                    
-                                    <li>
-                                        <span class="payment-list">엑스트라 베드(40,000원)</span>
-                                        <span class="payment-list">|</span>
-                                        <span class="payment-list">0</span>
-                                        <span class="payment-list">|</span>
-                                        <span class="payment-list">100,000원</span>
-                                    </li>
-                                </ul>
-                            </div>
-
                             <div class="req-result">
                                 <div class="payment-list">추가 요청사항</div>
                                 <div class="textBox"></div>
                             </div>
+
+                            <div class="req-result-message">* 기타 문의사항은 Q&A게시판 또는 객실 예약과(010-0000-000)로 <br> 문의주세요.</div>
                         </div>
-                        
                     </div>
                 </section>
                 
@@ -119,7 +102,9 @@
 
                             <div class="point-row">
                                 <span>보유 포인트</span>
-                                <span>10,000 p</span>
+                                <span>
+                                    <span id="availablePoint">10,000</span> p
+                                </span>
                             </div>
 
                             <div class="point-row">
@@ -133,10 +118,10 @@
 
                                     <!-- 키보드로 입력하는 숫자가 max보다 클때 input.value = "max" -->
                                     <!-- 키보드로 입력하는 숫자가 max보다 작을때 input.value = "min" -->
-                                    <input type="number" min="0">
+                                    <input type="number" name="usingPoint" id="usingPoint" min="0">
                                     <label class="extra-note">
                                         <!-- checkbox 체크시 max값이 input에 입력 -->
-                                        <input type="checkbox" name="" id=""> 모두 사용
+                                        <input type="checkbox" id="allUsed"> 모두 사용
                                     </label>
                                 </span>
                             </div>
@@ -275,7 +260,30 @@
             </section>
         </section>
 
-        <!-- 푸터 -->
+        <!-- footer -->
+        <footer>
+            <div class="inner">
+                <div class="upper">
+                    <h1>Hotel LaLa</h1>
+                    <ul>
+                        <li><a href="#">Policy</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Family Site</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+    
+                <div class="lower">
+                    <address>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, facere.<br>
+                        TEL : 02-111-1234 C.P : 010-1234-5678
+                    </address>
+                    <p>
+                        2022 Hotel LaLa &copy; copyright all right reserved.
+                    </p>
+                </div>
+            </div>
+        </footer>
     </main>
 
     <!-- jQuery -->

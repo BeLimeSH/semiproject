@@ -61,21 +61,21 @@
 
         </section>
 
+        <!-- ---------------------------------------------------------------------------------------------------------- -->
+
         <section class="reserveSection">
             <!-- 날짜 선택 바 -->
-            <!-- 날짜 선택 api(추가 예정?) -->
-            <form id="dateSelection">
+            <form id="dateSelection" name="dateSelection" action="reservation-room.html" onsubmit="return dateValidate()">
 
                 <div>
                     <div class="reserveTitle">CHECK IN / OUT</div>
-
-                    <a href="#" class="reserveContent" id="checkInDate">2022.00.00</a>
-                    <span class="reserveContent">~</span>
-                    <a href="#" class="reserveContent" id="checkOutDate">2022.00.00</a>
+                    <!-- 날짜 선택 input!! -->
+                    <input type="text" id="reserve-datepicker" class="reserveContent" name="reserveDate" readonly>
 
                     <span class="reserveContent" id="dividingBar">|</span>
 
-                    <span class="reserveContent">1박</span>
+                    <input type="text" id="dateRange" name="dateRange" class="reserveContent" value="1" readonly>
+                    <span class="reserveContent">박</span>
                 </div>
 
                 <div class="dividing-col"></div>
@@ -88,58 +88,44 @@
 
                 <div class="dividing-col"></div>
 
-                <div>
+                <label>
                     <div class="reserveTitle">성인</div>
 
                     <div class="reserveCount">
-                        <a href="#" class="reserveContent">0</a>
+                        <input type="number" value="0" class="head-input reserveContent" id="adultCount" name="adultCount" readonly>
                     </div>
-                </div>
+                </label>
                 
-                <div>
-                    <div class="reserveTitle">아동</div>
-
+                <label>
+                    <div class="reserveTitle">어린이</div>
+                    
                     <div class="reserveCount">
-                        <a href="#" class="reserveContent">0</a>
+                        <input type="number" value="0" class="head-input reserveContent" id="childCount" name="childCount" readonly>
                     </div>
-                </div>
+                </label>
 
-                <!-- a 태그 임시 -> 삭제 예정 -->
-                <button id="roomSearchBtn">
-                    <a href="reservation-room.html" style="color: black;">객실 검색</a>
-                </button>
+                <button id="roomSearchBtn">객실 검색</button>
                 
             </form>
-            
         </section>
 
-        <section class="reserveSection">
-            <!-- 달력 -->
-            <article id="calendarArticle" class="selectionContents">
-                
-                <!-- ***** 달력 api 넣기 / 만들기...? ***** -->
+        <section class="reserveSection removeResource" id="headcountBox">
+            <!-- 객실 인원 수 선택 -->
+            <article class="selectionContents">
 
-            </article>
-            
-        </section>
-
-        <section class="reserveSection">
-            <!-- 객실 수 인원 선택 -->
-            <article id="headcountArticle" class="selectionContents">
-                
                 <div class="roomCount">
-                    <div class="roomCount-tit">객실 1</div>
-
-                    <div class="dividing-col"></div>
-
+                    <div class="roomCount-tit">인원 선택</div>
 
                     <div class="roomCount-con">
                         <div>
                             <span class="roomCount-tit">성인</span>
+
                             <button class="roomCount-el minusBtn">
                                 <i class="fa-solid fa-minus"></i>    
                             </button>
-                            <span class="roomCount-el">0</span>
+
+                            <span class="roomCount-el" id="adultCount-span">0</span>
+
                             <button class="roomCount-el plusBtn">
                                 <i class="fa-solid fa-plus"></i>    
                             </button>
@@ -147,120 +133,68 @@
     
                         <div>
                             <span class="roomCount-tit">어린이</span>
-                            <button class="roomCount-el minusBtn">
-                                <i class="fa-solid fa-minus"></i>
-                            </button>
-                            <span class="roomCount-el">0</span>
-                            <button class="roomCount-el plusBtn">
-                                <i class="fa-solid fa-plus"></i>    
-                            </button>
+
+                            <button class="roomCount-el minusBtn"><i class="fa-solid fa-minus"></i></button>
+
+                            <span class="roomCount-el" id="childCount-span">0</span>
+
+                            <button class="roomCount-el plusBtn"><i class="fa-solid fa-plus"></i></button>
                         </div>
                     </div>
 
-
-                    <div class="addRoomArea"></div>
-                </div>
-                
-                <div class="dividing-row"></div>
-                
-                <div class="roomCount">
-                    <div class="roomCount-tit">객실 2</div>
-
-                    <div class="dividing-col"></div>
-
-                    <!-- 조건에 따라 추가/삭제될 수 있는 부분 -->
-                    <div class="roomCount-con hideResource">
-                        <div>
-                            <span class="roomCount-tit">성인</span>
-                            <button class="roomCount-el minusBtn">
-                                <i class="fa-solid fa-minus"></i>    
-                            </button>
-                            <span class="roomCount-el">0</span>
-                            <button class="roomCount-el plusBtn">
-                                <i class="fa-solid fa-plus"></i>    
-                            </button>
-                        </div>
-    
-                        <div>
-                            <span class="roomCount-tit">어린이</span>
-                            <button class="roomCount-el minusBtn">
-                                <i class="fa-solid fa-minus"></i>
-                            </button>
-                            <span class="roomCount-el">0</span>
-                            <button class="roomCount-el plusBtn">
-                                <i class="fa-solid fa-plus"></i>    
-                            </button>
-                        </div>
-                    </div>
-                    
-                    
-                    <div class="addRoomArea">
-                        <!-- 조건에 따라 추가/삭제될 수 있는 부분 -->
-                        <a href="#">+ 객실 추가</a>
-                        <span class="removeResource">
-                            <i class="fa-solid fa-xmark"></i>
-                        </span>
+                    <div class="count-btn-area">
+                        <button id="countBtn">저장</button>
                     </div>
                 </div>
-
-                <div class="dividing-row"></div>
                 
-                <div class="roomCount">
-                    <div class="roomCount-tit">객실 3</div>
-
-                    <div class="dividing-col"></div>
-
-                    <!-- 조건에 따라 추가/삭제될 수 있는 부분 -->
-                    <div class="roomCount-con hideResource">
-                        <div>
-                            <span class="roomCount-tit">성인</span>
-                            <button class="roomCount-el minusBtn">
-                                <i class="fa-solid fa-minus"></i>    
-                            </button>
-                            <span class="roomCount-el">0</span>
-                            <button class="roomCount-el plusBtn">
-                                <i class="fa-solid fa-plus"></i>    
-                            </button>
-                        </div>
-    
-                        <div>
-                            <span class="roomCount-tit">어린이</span>
-                            <button class="roomCount-el minusBtn">
-                                <i class="fa-solid fa-minus"></i>
-                            </button>
-                            <span class="roomCount-el">0</span>
-                            <button class="roomCount-el plusBtn">
-                                <i class="fa-solid fa-plus"></i>    
-                            </button>
-                        </div>
-                    </div>
-                    
-                    
-                    <div class="addRoomArea">
-                        <!-- 조건에 따라 추가/삭제될 수 있는 부분 -->
-                        <a href="#" class="removeResource">+ 객실 추가</a>
-                        <span class="removeResource">
-                            <i class="fa-solid fa-xmark"></i>
-                        </span>
-                    </div>
-                </div>
-
             </article>
-
         </section>
 
-        <!-- 푸터 -->
+        <!-- ---------------------------------------------------------------------------------------------------------- -->
+
+        <!-- 메세지 -->
+        <section class="reserveSection">
+
+            <article id="dateMessage" class="selectionContents">
+                예약 날짜와 인원 수를 선택해주세요.
+            </article>
+            
+        </section>
+
+        <!-- footer -->
         <footer>
-
-            <!-- 호텔 로고 -->
-            <section>
-            </section>
-
-            <!-- 카피라이트 & 맵이동 a 태그들 -->
-            <section></section>
-
+            <div class="inner">
+                <div class="upper">
+                    <h1>Hotel LaLa</h1>
+                    <ul>
+                        <li><a href="#">Policy</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Family Site</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+    
+                <div class="lower">
+                    <address>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, facere.<br>
+                        TEL : 02-111-1234 C.P : 010-1234-5678
+                    </address>
+                    <p>
+                        2022 Hotel LaLa &copy; copyright all right reserved.
+                    </p>
+                </div>
+            </div>
         </footer>
     </main>
-    
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    <script src="../Semi_resources/js/reservation.js"></script>
 </body>
 </html>
